@@ -24,9 +24,10 @@
   <router-view />
 </template>
 
-<style>
+<style lang="less">
+@background-color: #b07ed9;
 #navbar {
-  background: #b07ed9;
+  background: @background-color;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
