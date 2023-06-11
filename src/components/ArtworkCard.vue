@@ -32,7 +32,7 @@ export default {
   methods: {
     activeFilter() {},
     getImagePath(artwork) {
-      return "images/artworks/" + artwork.images[0];
+      return "../images/artworks/" + artwork.images[0];
     },
     getCardDescription(artwork) {
       if (artwork.description.length <= 140) {
@@ -76,7 +76,7 @@ export default {
 
 .card {
   transition: 0.3s;
-  margin: 20px;
+  margin: 10px;
 }
 
 .artwork-image {
