@@ -22,8 +22,13 @@
         </div>
       </div>
     </nav>
-    <div class="pt-3 rounded-2" id="main-view">
-      <router-view />
+    <div class="row">
+      <div
+        class="rounded-2 py-3 col-md-8 col-12 offset-md-2 h-auto"
+        id="main-view"
+      >
+        <router-view />
+      </div>
     </div>
   </div>
 </template>
@@ -39,6 +44,7 @@
 #body {
   background: @background-color;
   min-height: 100vh;
+  height: max-content;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -49,10 +55,8 @@
 }
 #main-view {
   background: @background-content;
-  max-width: 66%;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 25px;
+  margin-bottom: 25px;
 }
 nav {
   padding: 30px;

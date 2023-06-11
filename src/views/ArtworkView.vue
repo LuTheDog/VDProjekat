@@ -1,48 +1,18 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-6">
+      <div class="col-lg-6 col-12 align-items-center d-flex flex-column">
         <h1>{{ artwork.name }}</h1>
-        <h3>Add new offer</h3>
-        <form
-          class="d-flex justify-content-center mb-3"
-          @submit.prevent="submitOffer()"
-        >
-          <table>
-            <tr>
-              <td>Offer amount:</td>
-              <td>
-                <input type="number" v-model="offerAmount" required />
-              </td>
-            </tr>
-            <tr>
-              <td>Offer comment:</td>
-              <td>
-                <input type="text" v-model="offerComment" required />
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <button class="btn btn-primary" type="submit">
-                  Submit offer
-                </button>
-              </td>
-            </tr>
-          </table>
-        </form>
-        <h3>Offers:</h3>
-        <table class="table-secondary table">
-          <tr v-for="o in offers" :key="o.id">
-            <td>
-              {{ o.amount }}
-            </td>
-            <td>
-              {{ o.comment }}
-            </td>
-          </tr>
-        </table>
+        <h4>{{ artist.name }}</h4>
+        <p>{{ artist.description }}</p>
+        <h3 class="text-success mt-4 bg-warning-subtle px-3 py-1">
+          Estimated value: {{ artwork.price }}
+        </h3>
+        <h4 class="mt-4 bg-secondary-subtle px-3 py-1">
+          Estimated age: {{ artwork?.age }} years
+        </h4>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-lg-6">
         <div id="carouselExample" class="carousel slide">
           <div class="carousel-inner">
             <div
@@ -76,6 +46,67 @@
           </button>
         </div>
       </div>
+      <div class="row">
+        <div class="">
+          <hr />
+          <h3>Add new offer</h3>
+          <form
+            class="d-flex justify-content-center mb-3"
+            @submit.prevent="submitOffer()"
+          >
+            <table>
+              <tr>
+                <td class="text-start">Offer amount:</td>
+                <td class="text-end">
+                  <input
+                    class="form-control"
+                    type="number"
+                    v-model="offerAmount"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="text-start">Offer comment:</td>
+                <td class="text-end">
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="offerComment"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" class="">
+                  <button class="btn btn-primary" type="submit">
+                    Submit offer
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </form>
+          <h3>Offers:</h3>
+          <table class="table-secondary table table-striped">
+            <thead class="">
+              <tr>
+                <th>Amount</th>
+                <th>Comment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="o in offers" :key="o.id">
+                <td>
+                  {{ o.amount }}
+                </td>
+                <td>
+                  {{ o.comment }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -99,6 +130,7 @@ export default {
       offers: [],
       offerAmount: 0,
       offerComment: "",
+      artist: null,
     };
   },
   created() {
@@ -108,6 +140,7 @@ export default {
     if (this.offers == null) {
       this.offers = [];
     }
+    this.artist = data.artists.find((a) => a.id == this.artwork.author);
   },
   methods: {
     submitOffer() {
