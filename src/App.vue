@@ -29,34 +29,40 @@
                 type="button"
                 id="dropdownMenuButton"
               >
-                ARTWORKS
+                <L t="ARTWORKS" />
               </button>
               <ul class="dropdown-menu bg-transparent border-0">
                 <li>
                   <router-link class="nav-link" to="/artworks"
-                    >>&nbsp;ALL&nbsp;ARTWORKS</router-link
-                  >
+                    >>&nbsp;<L t="ALLARTWORKS"
+                  /></router-link>
                 </li>
                 <li>
                   <router-link class="nav-link" to="/artworks/paintings"
-                    >> PAINTINGS</router-link
-                  >
+                    >>&nbsp;<L t="PAINTINGS"
+                  /></router-link>
                 </li>
                 <li>
                   <router-link class="nav-link" to="/artworks/sculptures"
-                    >>&nbspSCULPTURES</router-link
-                  >
+                    >>&nbsp;<L t="SCULPTURES"
+                  /></router-link>
                 </li>
                 <li>
                   <router-link class="nav-link" to="/artworks/other"
-                    >> OTHER</router-link
-                  >
+                    >>&nbsp;<L t="OTHER"
+                  /></router-link>
                 </li>
               </ul>
             </div>
-            <router-link class="nav-link" to="/about">ABOUT</router-link>
-            <router-link class="nav-link" to="/artists">ARTISTS</router-link>
-            <router-link class="nav-link" to="/profile">MY PROFILE</router-link>
+            <router-link class="nav-link" to="/about"
+              ><L t="ABOUT"
+            /></router-link>
+            <router-link class="nav-link" to="/artists"
+              ><L t="ARTISTS"
+            /></router-link>
+            <router-link class="nav-link" to="/profile"
+              ><L t="PROFILE"
+            /></router-link>
             <div class="dropdown">
               <button
                 class="btn btn-secondary dropdown-toggle"

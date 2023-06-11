@@ -8,7 +8,7 @@
       />
     </div>
     <div class="row big-thing text-center mt-5">
-      <div class="col-12">ART IS SIMPLE.</div>
+      <div class="col-12"><L t="ARTISSIMPLE" />.</div>
     </div>
   </div>
   <div class="row">
@@ -24,7 +24,7 @@
         </a>
         <div class="card-body">
           <h2 class="card-title">
-            <b>ARTWORKS.</b>
+            <b><L t="ARTWORKS" />.</b>
           </h2>
           <p class="read-more card-text">
             Discover captivating artworks that capture the essence of refined
@@ -47,7 +47,7 @@
         </a>
         <div class="card-body">
           <h2 class="card-title">
-            <b>ARTISTS.</b>
+            <b><L t="ARTISTS" />.</b>
           </h2>
           <p class="read-more card-text">
             Step into our art gallery and be introduced to a collective of
@@ -62,12 +62,16 @@
 </template>
 
 <script>
+import L from "../components/Localization.vue";
 export default {
   name: "HomeView",
   methods: {
     link(url) {
       this.$router.push(url);
     },
+  },
+  components: {
+    L,
   },
 };
 </script>
