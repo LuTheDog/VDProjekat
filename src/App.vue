@@ -23,8 +23,39 @@
           <div class="navbar-nav mx-auto justify-content-between w-100">
             <div></div>
             <router-link class="nav-link" to="/"><L t="HOME" /></router-link>
+            <router-link class="nav-link" to="/">HOME</router-link>
+            <div class="dropdown">
+              <button
+                class="btn bg-transparent dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+              >
+                ARTWORKS
+              </button>
+              <ul class="dropdown-menu bg-transparent border-0">
+                <li>
+                  <router-link class="nav-link" to="/artworks"
+                    >>&nbsp;ALL&nbsp;ARTWORKS</router-link
+                  >
+                </li>
+                <li>
+                  <router-link class="nav-link" to="/artworks/paintings"
+                    >> PAINTINGS</router-link
+                  >
+                </li>
+                <li>
+                  <router-link class="nav-link" to="/artworks/sculptures"
+                    >>&nbspSCULPTURES</router-link
+                  >
+                </li>
+                <li>
+                  <router-link class="nav-link" to="/artworks/other"
+                    >> OTHER</router-link
+                  >
+                </li>
+              </ul>
+            </div>
             <router-link class="nav-link" to="/about">ABOUT</router-link>
-            <router-link class="nav-link" to="/artworks">ARTWORKS</router-link>
             <router-link class="nav-link" to="/artists">ARTISTS</router-link>
             <router-link class="nav-link" to="/profile">MY PROFILE</router-link>
             <div class="dropdown">
@@ -110,10 +141,10 @@ export default {
           bt = "/SIMPLICITY";
           break;
         case "/ARTWORK":
-          let artworkName = this.artworks
-            .find((awork) => awork.id == this.$route.query.id)
-            .name.toUpperCase();
-          bt = "/" + artworkName;
+          let aw = this.artworks.find(
+            (awork) => awork.id == this.$route.query.id
+          );
+          bt += "S/" + aw.type.toUpperCase() + "S/" + aw.name.toUpperCase();
           break;
       }
       return bt;
@@ -135,7 +166,7 @@ export default {
   padding: 68px !important;
 }
 #body {
-  height: 510px;
+  height: 530px;
   background-color: @navbar-color;
   font-family: "Raleway", sans-serif;
 }
@@ -154,11 +185,30 @@ export default {
 
 .nav-link {
   font-size: x-large !important;
+  color: #505050 !important;
+}
+
+button {
+  font-size: x-large !important;
+  color: #505050 !important;
 }
 
 .big-thing {
   padding-bottom: 75px;
   font-size: 70px !important;
   color: black;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+
+.router-link-active {
+  color: #000000 !important;
 }
 </style>

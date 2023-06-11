@@ -1,31 +1,22 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-9 col-md-12">
+    <div class="row search-bar">
+      <div class="col-lg-12 col-md-12">
         <input
           id="search"
           type="text"
           class="form-control"
-          aria-label="Text input with dropdown button"
           @keyup="activeFilter()"
         />
       </div>
-      <div class="col-lg-3 col-md-12">
-        <select id="select-type" @input="activeFilter()" class="form-select">
-          <option value="">All Artoworks</option>
-          <option value="painting">Painting</option>
-          <option value="sculpture">Sculpture</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
     </div>
-
+    <hr />
     <div
       class="row row-cols-1 row-cols-md-2 row-cols-lg-3 masonry-row"
       data-masonry='{"percentPosition": true,  "itemSelector": ".col" }'
     >
       <ArtworkCard
-        v-for="a of artworks"
+        v-for="a of getArtworks()"
         :key="a.id"
         :artwork="a"
         :artist="getArtist(a)"
@@ -67,15 +58,18 @@ export default {
     };
   },
   methods: {
+    getArtworks() {
+      if (this.$route.path == "/artworks") {
+        return this.artworks;
+      }
+      return this.artworks.filter((a) =>
+        this.$route.params.type.includes(a.type)
+      );
+    },
     activeFilter() {
       let search = $("#search");
-      let inputType = $("#select-type");
-      console.log(inputType.val());
       this.artworks = data.artworks.filter((artwork) =>
         artwork.name.toLowerCase().includes(search.val())
-      );
-      this.artworks = this.artworks.filter((artwork) =>
-        artwork.type.includes(inputType.val())
       );
       setTimeout(() => {
         let $grid = document.querySelector(".masonry-row");
@@ -90,5 +84,33 @@ export default {
       return this.artists.find((artist) => artist.id == artwork.author);
     },
   },
+  watch: {
+    $route(to, from) {
+      setTimeout(() => {
+        let $grid = document.querySelector(".masonry-row");
+        let msnry = new Masonry($grid, {
+          itemSelector: ".col",
+          percentPosition: true,
+        });
+        msnry.layout();
+      }, 10);
+    },
+  },
 };
 </script>
+
+<style>
+.search-bar {
+  margin: 10px !important;
+  margin-top: 20px !important;
+  margin-bottom: 40px !important;
+}
+
+.search-bar input {
+  font-size: 30px;
+}
+
+.search-bar select {
+  font-size: 30px;
+}
+</style>

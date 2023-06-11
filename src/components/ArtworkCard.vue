@@ -32,7 +32,7 @@ export default {
   methods: {
     activeFilter() {},
     getImagePath(artwork) {
-      return "images/artworks/" + artwork.images[0];
+      return "../images/artworks/" + artwork.images[0];
     },
     getCardDescription(artwork) {
       if (artwork.description.length <= 140) {
@@ -48,7 +48,7 @@ export default {
       }
     },
     showDetails(artwork) {
-      this.$router.push({ path: "artwork", query: { id: artwork.id } });
+      this.$router.push({ name: "artwork", query: { id: artwork.id } });
     },
   },
 };
@@ -76,6 +76,7 @@ export default {
 
 .card {
   transition: 0.3s;
+  margin: 10px;
 }
 
 .artwork-image {

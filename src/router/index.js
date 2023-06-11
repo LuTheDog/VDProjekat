@@ -12,8 +12,13 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/artworks",
-    name: "artworks",
+    path:"/artworks",
+    name:"artworks",
+    component:ArtworksView
+  },
+  {
+    path: "/artworks/:type",
+    name: "artworksByType",
     component: ArtworksView,
   },
   {
