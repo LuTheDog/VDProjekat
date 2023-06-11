@@ -6,6 +6,7 @@ export default {
       description: "Considered an archetypal masterpiece of the Italian Renaissance,[4][5] it has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world.\"[6] The painting's novel qualities include the subject's enigmatic expression,[7] monumentality of the composition, the subtle modelling of forms, and the atmospheric illusionism.[8]",
       price: 300,
       author: 1,
+      type: "painting",
       images: ["monalisa1.jpg", "monalisa2.jpg", "monalisa3.jpg"],
     },
     {
@@ -23,7 +24,7 @@ export default {
       description: "Lol vidi mu se kita",
       price: 300,
       author: 2,
-      type: "sculpture",
+      type: "painting",
       images: ["vg4.png", "david2.png"],
     },
     {
@@ -32,7 +33,7 @@ export default {
       description: "Lol vidi mu se kita",
       price: 300,
       author: 2,
-      type: "sculpture",
+      type: "painting",
       images: ["vg3.png", "david2.png"],
     },
     {
@@ -41,7 +42,7 @@ export default {
       description: "Lol vidi mu se kita",
       price: 300,
       author: 2,
-      type: "sculpture",
+      type: "painting",
       images: ["vg2.png", "david2.png"],
     },
     {
@@ -50,7 +51,7 @@ export default {
       description: "Lol vidi mu se kita",
       price: 300,
       author: 2,
-      type: "sculpture",
+      type: "painting",
       images: ["vg1.png", "david2.png"],
     },
   ],

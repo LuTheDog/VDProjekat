@@ -29,16 +29,16 @@
 </template>
 
 <style lang="less">
-@navbar-color: #b07ed9;
+@navbar-color: #be6eff;
 @text-color: #474747;
-@background-color: #f0f0f0;
+@background-color: #fffca8;
 @background-content: #f7f7f7;
 #navbar {
   background: @navbar-color;
 }
 #body {
-  background: @background-color;
-  min-height: 100vh;
+  height: calc(50vh);
+  background-color: @navbar-color;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -53,6 +53,8 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 15px;
 }
 nav {
   padding: 30px;

@@ -1,31 +1,27 @@
 <template>
   <div class="container">
-    <div class="input-group mb-3 mt-4">
-      <input
-        id="search"
-        type="text"
-        class="form-control"
-        aria-label="Text input with dropdown button"
-        @keyup="activeFilter()"
-      />
-      <button
-        class="btn btn-outline-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Dropdown
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Separated link</a></li>
-      </ul>
+    <div class="row">
+      <div class="col-lg-9 col-md-12">
+        <input
+          id="search"
+          type="text"
+          class="form-control"
+          aria-label="Text input with dropdown button"
+          @keyup="activeFilter()"
+        />
+      </div>
+      <div class="col-lg-3 col-md-12">
+        <select id="select-type" @input="activeFilter()" class="form-select">
+          <option value="">All Artoworks</option>
+          <option value="painting">Painting</option>
+          <option value="sculpture">Sculpture</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
     </div>
+
     <div
-      class="row row-cols-1 row-cols-md-2 row-cols-lg-3"
+      class="row row-cols-1 row-cols-md-2 row-cols-lg-3 masonry-row"
       data-masonry='{"percentPosition": true,  "itemSelector": ".col" }'
     >
       <ArtworkCard
@@ -46,7 +42,7 @@ import ArtworkCard from "@/components/ArtworkCard.vue";
 
 export default {
   mounted: function () {
-    let $grid = document.querySelector(".row");
+    let $grid = document.querySelector(".masonry-row");
     let msnry = new Masonry($grid, {
       itemSelector: ".col",
       percentPosition: true,
@@ -73,15 +69,22 @@ export default {
   methods: {
     activeFilter() {
       let search = $("#search");
+      let inputType = $("#select-type");
+      console.log(inputType.val());
       this.artworks = data.artworks.filter((artwork) =>
         artwork.name.toLowerCase().includes(search.val())
       );
-      let $grid = document.querySelector(".row");
-      let msnry = new Masonry($grid, {
-        itemSelector: ".col",
-        percentPosition: true,
-      });
-      msnry.layout();
+      this.artworks = this.artworks.filter((artwork) =>
+        artwork.type.includes(inputType.val())
+      );
+      setTimeout(() => {
+        let $grid = document.querySelector(".masonry-row");
+        let msnry = new Masonry($grid, {
+          itemSelector: ".col",
+          percentPosition: true,
+        });
+        msnry.layout();
+      }, 10);
     },
     getArtist(artwork) {
       return this.artists.find((artist) => artist.id == artwork.author);
