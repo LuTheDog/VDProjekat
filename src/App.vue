@@ -26,7 +26,7 @@
             <router-link class="nav-link" to="/about">ABOUT</router-link>
             <router-link class="nav-link" to="/artworks">ARTWORKS</router-link>
             <router-link class="nav-link" to="/artists">ARTISTS</router-link>
-            <router-link class="nav-link" to="/">MY PROFILE</router-link>
+            <router-link class="nav-link" to="/profile">MY PROFILE</router-link>
             <div></div>
           </div>
         </div>

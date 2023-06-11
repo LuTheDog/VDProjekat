@@ -6,9 +6,9 @@
       <p class="card-text">
         {{ artist.description }}
       </p>
-      <a :href="'/pdfs/' + artist.artworks" class="btn btn-primary"
-        >All artworks</a
-      >
+      <a :href="'/pdfs/' + artist.artworks" class="btn btn-primary">
+        All artworks
+      </a>
     </div>
   </div>
 </template>
