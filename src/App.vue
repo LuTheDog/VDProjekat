@@ -95,7 +95,7 @@ export default {
           break;
         case "/ARTWORK":
           let artworkName = this.artworks
-            .find((awork) => (awork.id = this.$route.query.id))
+            .find((awork) => awork.id == this.$route.query.id)
             .name.toUpperCase();
           bt = "/" + artworkName;
           break;

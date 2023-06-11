@@ -126,6 +126,7 @@ export default {
     return {
       artwork: data.artworks[0],
       offers: [],
+      allOffers: [],
       offerAmount: 0,
       offerComment: "",
       user: "",
@@ -140,24 +141,34 @@ export default {
     }
     let artworkId = this.$route.query.id;
     this.artwork = data.artworks.find((art) => artworkId == art.id);
-    this.offers = JSON.parse(localStorage.getItem("offers"));
-    if (this.offers == null) {
-      this.offers = [];
-    }
+    this.setOffers();
     this.artist = data.artists.find((a) => a.id == this.artwork.author);
   },
   methods: {
+    setOffers() {
+      this.allOffers = JSON.parse(localStorage.getItem("offers"));
+      if (this.allOffers == null) {
+        this.offers = [];
+        this.allOffers = [];
+      } else {
+        this.offers = this.allOffers.filter(
+          (offer) => offer.artwork == this.artwork.id
+        );
+      }
+    },
     submitOffer() {
       let newOffer = {
-        id: this.offers.length,
+        id: this.allOffers.length,
+        artwork: this.artwork.id,
         submitter: this.user,
         amount: this.offerAmount,
         comment: this.offerComment,
       };
-      this.offers.push(newOffer);
+      this.allOffers.push(newOffer);
       this.offerAmount = 0;
       this.offerComment = "";
-      localStorage.setItem("offers", JSON.stringify(this.offers));
+      localStorage.setItem("offers", JSON.stringify(this.allOffers));
+      this.setOffers();
     },
   },
 };
