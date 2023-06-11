@@ -89,7 +89,7 @@ export default {
   padding: 68px !important;
 }
 #body {
-  height: 510px;
+  height: 530px;
   background-color: @navbar-color;
   font-family: "Raleway", sans-serif;
 }

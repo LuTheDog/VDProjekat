@@ -76,6 +76,7 @@ export default {
 
 .card {
   transition: 0.3s;
+  margin: 20px;
 }
 
 .artwork-image {
