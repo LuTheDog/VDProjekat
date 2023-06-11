@@ -65,13 +65,24 @@ export default {
     {
       id: 1,
       name: "Da Vinki",
+      picture: "davinki.jpg",
+      artworks: "licensed-image.pdf",
       description:
         "Najbolji umetnik ikada, naslikao je mona lizu bas je burazer",
     },
     {
       id: 2,
-      name: "Mikenaldjelo",
+      name: "Mikelandjelo",
+      picture: "mikelandjelo.jpg",
+      artworks: "licensed-image.pdf",
       description: "Najjaci od svih nindza kornjaca donatelo moze da ga pusi",
+    },
+    {
+      id: 3,
+      name: "Klod Mone",
+      picture: "mone.jpg",
+      artworks: "licensed-image.pdf",
+      description: "Najbolji slikar svih vremena",
     },
   ],
 };

@@ -21,7 +21,7 @@
               :class="index == 0 ? 'carousel-item active' : 'carousel-item'"
             >
               <img
-                :src="'/images/' + im"
+                :src="'/images/artworks/' + im"
                 class="d-block w-100 h-50 carousel-image"
               />
             </div>
