@@ -3,16 +3,19 @@ export default {
     {
       id: 1,
       name: "Mona Lisa",
-      description: "Considered an archetypal masterpiece of the Italian Renaissance,[4][5] it has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world.\"[6] The painting's novel qualities include the subject's enigmatic expression,[7] monumentality of the composition, the subtle modelling of forms, and the atmospheric illusionism.[8]",
+      description:
+        "Considered an archetypal masterpiece of the Italian Renaissance,[4][5] it has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world.\"[6] The painting's novel qualities include the subject's enigmatic expression,[7] monumentality of the composition, the subtle modelling of forms, and the atmospheric illusionism.[8]",
       price: 300,
       author: 1,
       type: "painting",
+      age: 500,
       images: ["monalisa1.jpg", "monalisa2.jpg", "monalisa3.jpg"],
     },
     {
       id: 2,
       name: "David",
       description: "Lol vidi mu se kita",
+      age: 500,
       price: 300,
       author: 2,
       type: "sculpture",
@@ -23,6 +26,7 @@ export default {
       name: "David",
       description: "Lol vidi mu se kita",
       price: 300,
+      age: 500,
       author: 2,
       type: "painting",
       images: ["vg4.png", "david2.png"],
@@ -32,6 +36,7 @@ export default {
       name: "David",
       description: "Lol vidi mu se kita",
       price: 300,
+      age: 500,
       author: 2,
       type: "painting",
       images: ["vg3.png", "david2.png"],
@@ -41,6 +46,7 @@ export default {
       name: "David",
       description: "Lol vidi mu se kita",
       price: 300,
+      age: 500,
       author: 2,
       type: "painting",
       images: ["vg2.png", "david2.png"],
@@ -59,10 +65,13 @@ export default {
     {
       id: 1,
       name: "Da Vinki",
+      description:
+        "Najbolji umetnik ikada, naslikao je mona lizu bas je burazer",
     },
     {
       id: 2,
       name: "Mikenaldjelo",
+      description: "Najjaci od svih nindza kornjaca donatelo moze da ga pusi",
     },
   ],
 };
