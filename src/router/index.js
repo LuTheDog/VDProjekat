@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ArtworksView from "../views/ArtworksView.vue";
+import ArtworkView from "../views/ArtworkView.vue";
 
 const routes = [
   {
@@ -10,8 +11,13 @@ const routes = [
   },
   {
     path: "/artworks",
-    name: "artwork",
+    name: "artworks",
     component: ArtworksView,
+  },
+  {
+    path: "/artwork",
+    name: "artwork",
+    component: ArtworkView,
   },
   {
     path: "/about",

@@ -5,7 +5,7 @@ export default {
       name: "Mona Lisa",
       price: 300,
       author: 1,
-      images: ["monalisa1.png", "monalisa2.png"],
+      images: ["monalisa1.jpg", "monalisa2.jpg", "monalisa3.jpg"],
     },
     {
       id: 2,
