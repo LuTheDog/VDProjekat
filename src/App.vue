@@ -102,7 +102,7 @@
       </div>
     </nav>
     <div class="text-center big-thing">{{ getBigThing() }}/</div>
-    <div class="row">
+    <div class="row" style="max-width: 100%">
       <div
         class="rounded-2 py-3 col-md-8 col-12 offset-md-2 h-auto"
         id="main-view"
@@ -174,6 +174,7 @@ export default {
   height: 530px;
   background-color: @navbar-color;
   font-family: "Raleway", sans-serif;
+  max-width: 100%;
 }
 #app {
   font-family: "Raleway", sans-serif;
