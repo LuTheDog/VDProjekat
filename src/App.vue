@@ -9,7 +9,7 @@
     <nav class="navbar navbar-expand-lg padded">
       <div class="container-fluid">
         <button
-          class="navbar-toggler"
+          class="navbar-toggler w-100"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
