@@ -128,10 +128,16 @@ export default {
       offers: [],
       offerAmount: 0,
       offerComment: "",
+      user: "",
       artist: null,
     };
   },
   created() {
+    if (localStorage.getItem("user") == null) {
+      this.user = "Guest";
+    } else {
+      this.user = JSON.parse(localStorage.getItem("user"));
+    }
     let artworkId = this.$route.query.id;
     this.artwork = data.artworks.find((art) => artworkId == art.id);
     this.offers = JSON.parse(localStorage.getItem("offers"));
@@ -143,6 +149,8 @@ export default {
   methods: {
     submitOffer() {
       let newOffer = {
+        id: this.offers.length,
+        submitter: this.user,
         amount: this.offerAmount,
         comment: this.offerComment,
       };

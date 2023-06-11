@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import ArtworksView from "../views/ArtworksView.vue";
 import ArtworkView from "../views/ArtworkView.vue";
 import ArtistsView from "../views/ArtistsView.vue";
+import ProfileView from "../views/ProfileView.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/artists",
     name: "artists",
     component: ArtistsView,
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: ProfileView,
   },
   {
     path: "/about",
