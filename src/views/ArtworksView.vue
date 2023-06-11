@@ -10,6 +10,7 @@
         />
       </div>
     </div>
+    <div><button @click="sort()">Sortiraj</button></div>
     <hr />
     <div
       class="row row-cols-1 row-cols-md-2 row-cols-lg-3 masonry-row"
@@ -69,8 +70,12 @@ export default {
     activeFilter() {
       let search = $("#search");
       this.artworks = data.artworks.filter((artwork) =>
-        artwork.name.toLowerCase().includes(search.val())
+        artwork.name.toLowerCase().includes(search.val().toLowerCase())
       );
+      this.sort();
+      this.makeLayout();
+    },
+    makeLayout() {
       setTimeout(() => {
         let $grid = document.querySelector(".masonry-row");
         let msnry = new Masonry($grid, {
@@ -79,6 +84,11 @@ export default {
         });
         msnry.layout();
       }, 10);
+    },
+    sort() {
+      this.artworks.sort((artwork1, artwork2) => {
+        return artwork1.name.localeCompare(artwork2.name);
+      });
     },
     getArtist(artwork) {
       return this.artists.find((artist) => artist.id == artwork.author);
@@ -86,14 +96,7 @@ export default {
   },
   watch: {
     $route(to, from) {
-      setTimeout(() => {
-        let $grid = document.querySelector(".masonry-row");
-        let msnry = new Masonry($grid, {
-          itemSelector: ".col",
-          percentPosition: true,
-        });
-        msnry.layout();
-      }, 10);
+      this.makeLayout();
     },
   },
 };
