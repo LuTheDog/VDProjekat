@@ -48,7 +48,7 @@ export default {
       }
     },
     showDetails(artwork) {
-      this.$router.push({ path: "artwork", query: { id: artwork.id } });
+      this.$router.push({ name: "artwork", query: { id: artwork.id } });
     },
   },
 };

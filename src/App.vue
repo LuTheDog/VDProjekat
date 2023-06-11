@@ -94,10 +94,10 @@ export default {
           bt = "/SIMPLICITY";
           break;
         case "/ARTWORK":
-          let artworkName = this.artworks
-            .find((awork) => awork.id == this.$route.query.id)
-            .name.toUpperCase();
-          bt = "/" + artworkName;
+          let aw = this.artworks.find(
+            (awork) => awork.id == this.$route.query.id
+          );
+          bt += "S/" + aw.type.toUpperCase() + "S/" + aw.name.toUpperCase();
           break;
       }
       return bt;
