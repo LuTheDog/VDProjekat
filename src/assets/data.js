@@ -2,7 +2,7 @@ export default {
   artworks: [
     {
       id: 1,
-      name: "Mona Lisa",
+      name: "AMona Lisa",
       description:
         "Considered an archetypal masterpiece of the Italian Renaissance,[4][5] it has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world.\"[6] The painting's novel qualities include the subject's enigmatic expression,[7] monumentality of the composition, the subtle modelling of forms, and the atmospheric illusionism.[8]",
       price: 300,
@@ -13,7 +13,7 @@ export default {
     },
     {
       id: 2,
-      name: "David",
+      name: "A",
       description: "Lol vidi mu se kita",
       age: 500,
       price: 300,
@@ -23,7 +23,7 @@ export default {
     },
     {
       id: 3,
-      name: "David",
+      name: "B",
       description: "Lol vidi mu se kita",
       price: 300,
       age: 500,
@@ -33,7 +33,7 @@ export default {
     },
     {
       id: 4,
-      name: "David",
+      name: "C",
       description: "Lol vidi mu se kita",
       price: 300,
       age: 500,
@@ -43,7 +43,7 @@ export default {
     },
     {
       id: 5,
-      name: "David",
+      name: "D",
       description: "Lol vidi mu se kita",
       price: 300,
       age: 500,
@@ -53,7 +53,16 @@ export default {
     },
     {
       id: 6,
-      name: "David",
+      name: "E",
+      description: "Lol vidi mu se kita",
+      price: 300,
+      author: 2,
+      type: "painting",
+      images: ["vg1.png", "david2.png"],
+    },
+    {
+      id: 7,
+      name: "F",
       description: "Lol vidi mu se kita",
       price: 300,
       author: 2,

@@ -23,7 +23,6 @@
           <div class="navbar-nav mx-auto justify-content-between w-100">
             <div></div>
             <router-link class="nav-link" to="/"><L t="HOME" /></router-link>
-            <router-link class="nav-link" to="/">HOME</router-link>
             <div class="dropdown">
               <button
                 class="btn bg-transparent dropdown-toggle"
@@ -190,7 +189,6 @@ export default {
 
 button {
   font-size: x-large !important;
-  color: #505050 !important;
 }
 
 .big-thing {
