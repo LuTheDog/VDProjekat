@@ -110,6 +110,10 @@
         <router-view />
       </div>
     </div>
+    <div id="footer">
+      Copyright 2023, Luka Lazic i Marko Radoicic, Odsek za softversko
+      inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu
+    </div>
   </div>
 </template>
 
@@ -164,6 +168,11 @@ export default {
 @text-color: #474747;
 @background-color: #ffffff;
 @background-content: #e9e9e9;
+#footer {
+  background: @navbar-color;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
 #navbar {
   background: @navbar-color;
   padding: 60px !important;
