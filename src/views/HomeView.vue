@@ -24,7 +24,7 @@
         </a>
         <div class="card-body">
           <h2 class="card-title">
-            <b><L t="ARTWORKS" />.</b>
+            <b>NEW COLLECTIONS</b>
           </h2>
           <p class="read-more card-text">
             Discover captivating artworks that capture the essence of refined
@@ -43,11 +43,12 @@
             src="../../public/images/artists/davinki.jpg"
             class="card-img-top artwork-image"
             alt="Davinki"
+            @click="link('artists')"
           />
         </a>
         <div class="card-body">
           <h2 class="card-title">
-            <b><L t="ARTISTS" />.</b>
+            <b>OUR ARTISTS</b>
           </h2>
           <p class="read-more card-text">
             Step into our art gallery and be introduced to a collective of
@@ -59,19 +60,50 @@
       </div>
     </div>
   </div>
+  <div class="row m-5">
+    <h1>LATEST OFFERS:</h1>
+  </div>
+  <div class="row">
+    <div
+      v-for="o of getOffers()"
+      :key="o.id"
+      class="col-lg-4 col-md-6 col-sm-12"
+    >
+      <ArtworkCard :artwork="getArtwork(o)" :artist="{ name: '' }" />
+      <h3>OFFER: {{ o.amount }}</h3>
+    </div>
+  </div>
 </template>
 
 <script>
+import ArtworkCard from "../components/ArtworkCard.vue";
 import L from "../components/Localization.vue";
+import data from "../assets/data.js";
 export default {
   name: "HomeView",
+  data() {
+    return {
+      artworks: data.artworks,
+      artists: data.artists,
+    };
+  },
   methods: {
     link(url) {
       this.$router.push(url);
     },
+    getOffers() {
+      let offers = JSON.parse(localStorage.getItem("offers")).slice(-3);
+      console.log(offers);
+      return offers;
+    },
+    getArtwork(offer) {
+      return this.artworks.find((a) => a.id == offer.artwork);
+    },
+    getArtist(offer) {},
   },
   components: {
     L,
+    ArtworkCard,
   },
 };
 </script>

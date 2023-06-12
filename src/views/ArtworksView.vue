@@ -87,7 +87,7 @@ export default {
     },
     sort() {
       this.artworks.sort((artwork1, artwork2) => {
-        return artwork1.name.localeCompare(artwork2.name);
+        return artwork2.name.localeCompare(artwork1.name);
       });
     },
     getArtist(artwork) {

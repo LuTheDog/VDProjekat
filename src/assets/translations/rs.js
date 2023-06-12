@@ -42,5 +42,13 @@ export default [
   {
     title: "ABOUTTEXT",
     description: "Dobrodošli u našu umetničku galeriju, gde se jednostavnost i elegancija prepliću. Otkrijte očaravajuća umetnička dela, pažljivo izrađena da utelovljuju sofisticiranu lepotu. Svaki komad odražava harmoničan spoj minimalizma i elegancije, pozivajući vas da razmišljate o snazi jednostavnosti. Pridružite nam se na ovom umetničkom putovanju i uronite u mirno zadovoljstvo estetskih izraza."
+  },
+  {
+    title:"NEWCOLLECTION",
+    description: "NOVE KOLEKCIJE"
+  },
+  {
+    title: "OURARTISTS",
+    description: "NAŠI UMETNICI"
   }
 ];
