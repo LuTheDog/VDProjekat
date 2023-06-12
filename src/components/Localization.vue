@@ -26,6 +26,9 @@ export default {
     } else {
       this.word = this.rs.find((w) => w.title == this.t).description;
     }
+    if (this.word == undefined) {
+      this.word = "NO TRANSLATION";
+    }
   },
 };
 </script>
