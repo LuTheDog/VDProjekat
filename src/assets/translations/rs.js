@@ -66,4 +66,12 @@ export default [
     title: "SORT BY ARTIST",
     description: "Po umetniku",
   },
+  {
+    title: "LATESTOFFERS",
+    description: "NAJNOVIJE PONUDE"
+  },
+  {
+    title: "OFFER",
+    description: "PONUDA"
+  }
 ];

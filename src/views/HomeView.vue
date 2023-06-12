@@ -61,7 +61,7 @@
     </div>
   </div>
   <div class="row m-5">
-    <h1>LATEST OFFERS:</h1>
+    <h1><L t="LATESTOFFERS" />:</h1>
   </div>
   <div class="row">
     <div
@@ -70,7 +70,7 @@
       class="col-lg-4 col-md-6 col-sm-12"
     >
       <ArtworkCard :artwork="getArtwork(o)" :artist="{ name: '' }" />
-      <h3>OFFER: {{ o.amount }}</h3>
+      <h3><L t="OFFER" />: {{ o.amount }}</h3>
     </div>
   </div>
 </template>
