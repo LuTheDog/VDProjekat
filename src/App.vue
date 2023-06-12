@@ -101,7 +101,7 @@
         </div>
       </div>
     </nav>
-    <div class="text-center big-thing">{{ getBigThing() }}/</div>
+    <div class="text-center big-thing">/{{ getBigThing() }}/</div>
     <div class="row" style="max-width: 100%">
       <div
         class="rounded-2 py-3 col-md-8 col-12 offset-md-2 h-auto"
@@ -139,13 +139,14 @@ export default {
     },
     getBigThing() {
       let bt = this.$route.path.toUpperCase();
-      console.log(this.$route.path);
       if (bt == "/") bt = "/SIMPLICITY";
+      bt = bt.slice(1);
+
       switch (bt) {
         case "/":
           bt = "/SIMPLICITY";
           break;
-        case "/ARTWORK":
+        case "ARTWORK":
           let aw = this.artworks.find(
             (awork) => awork.id == this.$route.query.id
           );
